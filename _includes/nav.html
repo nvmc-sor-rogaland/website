@@ -20,7 +20,7 @@
               {%- if link[0] == "Terminliste" -%}
                 {%- assign events = site.events | sort: 'path' | reverse -%}
                 {%- for event in events -%}
-                  {%- assign year = event.path | remove_first: '/' | split: '.' | first -%}
+                  {%- assign year = event.path | split: '/' | last | split: '.' | first -%}
                   <a class="dropdown-item" href="{{ event.url | relative_url }}">{{ year }}</a>
                 {%- endfor -%}
               {%- else -%}
