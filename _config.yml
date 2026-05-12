@@ -24,8 +24,6 @@ locale: no
 
 navbar-links:
   Terminliste:
-  - 2026: "/events/2026"
-  - 2025: ""
   Bli medlem: "blimedlem"
   Om oss: "omoss"
 
@@ -276,7 +274,7 @@ kramdown:
 collections:
   events:
     output: true
-    permalink: /events/:path/
+    permalink: /terminliste/:path/
 
 # Default YAML values (more information on Jekyll's site)
 defaults:

@@ -13,15 +13,23 @@
   <div class="collapse navbar-collapse" id="main-navbar">
     <ul class="navbar-nav ml-auto">
       {%- for link in site.navbar-links -%}
-        {%- if link[1].first %}
+        {%- if link[1].first or link[0] == "Terminliste" %}
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ link[0] }}</a>
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-              {%- for childlink in link[1] -%}
-                {%- for linkparts in childlink %}
-                  <a class="dropdown-item" href="{{ linkparts[1] | relative_url }}">{{ linkparts[0] }}</a>
+              {%- if link[0] == "Terminliste" -%}
+                {%- assign events = site.events | sort: 'path' | reverse -%}
+                {%- for event in events -%}
+                  {%- assign year = event.path | remove_first: '/' | split: '.' | first -%}
+                  <a class="dropdown-item" href="{{ event.url | relative_url }}">{{ year }}</a>
                 {%- endfor -%}
-              {%- endfor %}
+              {%- else -%}
+                {%- for childlink in link[1] -%}
+                  {%- for linkparts in childlink %}
+                    <a class="dropdown-item" href="{{ linkparts[1] | relative_url }}">{{ linkparts[0] }}</a>
+                  {%- endfor -%}
+                {%- endfor -%}
+              {%- endif -%}
             </div>
           </li>
         {% else %}
