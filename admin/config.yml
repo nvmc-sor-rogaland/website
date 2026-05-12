@@ -25,11 +25,11 @@ collections:
     create: true
     slug: "{{year}}"
     fields:
+      - { name: "year", label: "År", widget: "number", value_type: "int" }
       - { name: "layout", label: "Layout", widget: "hidden", default: "page" }
       - { name: "title", label: "Tittel", widget: "string" }
       - { name: "subtitle", label: "Ingress", widget: "string" }
-      - { name: "body", label: "Innhold", widget: "richtext" }
-       required: false }
+      - { name: "body", label: "Innhold", widget: "richtext", required: false }
 
 auth:
   email_claim: email
