@@ -30,6 +30,23 @@ collections:
       - { name: "title", label: "Tittel", widget: "string" }
       - { name: "subtitle", label: "Ingress", widget: "string" }
       - { name: "body", label: "Innhold", widget: "richtext", required: false }
+  - name: "signup"
+    label: "Bli medlem"
+    file: "_signup.md"
+    fields:
+      - { name: "layout", label: "Layout", widget: "hidden", default: "page" }
+      - { name: "title", label: "Tittel", widget: "string" }
+      - { name: "subtitle", label: "Ingress", widget: "string" }
+      - { name: "body", label: "Innhold", widget: "richtext", required: false }
+    -name: "about"
+    label: "Om oss"
+    file: "omoss.md"
+    fields:
+      - { name: "layout", label: "Layout", widget: "hidden", default: "page" }
+      - { name: "title", label: "Tittel", widget: "string" }
+      - { name: "subtitle", label: "Ingress", widget: "string" }
+      - { name: "body", label: "Innhold", widget: "richtext", required: false }
+
 
 auth:
   email_claim: email
