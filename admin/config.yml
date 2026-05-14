@@ -20,10 +20,11 @@ media_folder: "assets/uploads"
 
 collections:
   - name: "schedules"
-    label: "Terminliste"
+    label: "Terminlister"
+    label_singular: "Terminliste"
     folder: "_schedules/"
     create: true
-    slug: "{{year}}"
+    slug: "{{fields.year}}"
     fields:
       - {
           name: "year",
@@ -42,9 +43,10 @@ collections:
           - { name: "start", label: "Startdato og -tidspunkt", widget: "datetime", format: "YYYY-MM-DD HH:mm" }
           - { name: "end", label: "Sluttdato og -tidspunkt", widget: "datetime", format: "YYYY-MM-DD HH:mm", required: false }
           - { name: "description", label: "Beskrivelse", widget: "string" }
-          - { name: "event", label: "Arrangement", widget: "relation", collection: "events", search_fields: ["title"], value_field: "title", required: false }
+          - { name: "event", label: "Arrangement", widget: "relation", collection: "events", search_fields: ["title"], value_field: "{{slug}}", required: false }
   - name: "events"
     label: "Arrangementer"
+    label_singular: "Arrangement"
     folder: "_events/"
     create: true
     slug: "{{slug}}"
@@ -58,6 +60,7 @@ collections:
       - { name: "body", label: "Beskrivelse", widget: "richtext", required: true }
   - name: "pages"
     label: "Sider"
+    label_singular: "Side"
     files:
       - name: "join"
         label: "Bli medlem"
@@ -94,6 +97,10 @@ auth:
   last_name_claim: last_name
   avatar_url_claim: avatar_url
 
-logo_url: https://raw.githubusercontent.com/nvmc-sor-rogaland/website/refs/heads/master/assets/img/logo.png
+logo:
+  src: https://raw.githubusercontent.com/nvmc-sor-rogaland/website/refs/heads/master/assets/img/logo.png
+  show_in_header: true
 
 site_url: https://nvmc-sor-rogaland.github.io/website
+
+locale: 'no'

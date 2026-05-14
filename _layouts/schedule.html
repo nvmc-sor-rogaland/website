@@ -15,7 +15,7 @@ layout: base
       {% endif %}
 
       <div class="schedule-container">
-        {% for entry in page.entires %}
+        {% for entry in page.entries %}
           {% assign start_date = entry.start | date: '%Y-%m-%d' %}
           {% assign end_date = entry.end | date: '%Y-%m-%d' %}
 
