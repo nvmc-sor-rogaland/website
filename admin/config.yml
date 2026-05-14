@@ -42,7 +42,7 @@ collections:
           - { name: "start", label: "Startdato og -tidspunkt", widget: "datetime", format: "YYYY-MM-DD HH:mm" }
           - { name: "end", label: "Sluttdato og -tidspunkt", widget: "datetime", format: "YYYY-MM-DD HH:mm", required: false }
           - { name: "description", label: "Beskrivelse", widget: "string" }
-          - { name: "event", label: "Arrangement", widget: "relation", collection: "events", search_fields: ["title"], value_field: "title" }
+          - { name: "event", label: "Arrangement", widget: "relation", collection: "events", search_fields: ["title"], value_field: "title", required: false }
   - name: "events"
     label: "Arrangementer"
     folder: "_events/"
