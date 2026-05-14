@@ -42,7 +42,7 @@ collections:
           name: "year",
           label: "År",
           widget: "number",
-          value_type: "int",
+          value_type: "string",
           pattern: ["^[0-9]{4}$", "Må inneholde et årstall"],
         }
       - { name: "layout", label: "Layout", widget: "hidden", default: "schedules" }

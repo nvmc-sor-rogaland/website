@@ -15,9 +15,16 @@ layout: base
       {% endif %}
 
       <div class="schedule-container">
-        {% for entry in page.entries %}
-          {% assign start_date = entry.start | date: '%Y-%m-%d' %}
-          {% assign end_date = entry.end | date: '%Y-%m-%d' %}
+        {% assign schedule_year = page.year %}
+
+        {% for event in site.events %}
+          {% assign event_year = event.start | date: '%Y' %}
+          {% if event_year != schedule_year %}
+            {% continue %}
+          {% endif %}
+
+          {% assign start_date = event.start | date: '%Y-%m-%d' %}
+          {% assign end_date = event.end | date: '%Y-%m-%d' %}
 
           {% if start_date != end_date %}
             {% assign is_multi_day = true %}
@@ -25,31 +32,35 @@ layout: base
             {% assign is_multi_day = false %}
           {% endif %}
 
-          <div class="schedule-content">
-            <!-- Left column: Date -->
+          <a
+            href="{{ event.url | relative_url }}"
+            class="schedule-content"
+            style="text-decoration:none; color:inherit; display:grid;"
+          >
             <div class="schedule-entry-date">
               <div class="schedule-entry-date-month">
-                {{ entry.start | date: '%b' }}
+                {{ event.start | date: '%b' }}
               </div>
               <div class="schedule-entry-date-day">
-                {{ entry.start | date: '%d' }}
+                {{ event.start | date: '%d' }}
               </div>
             </div>
 
-            <!-- Right column: Time and Description -->
             {% if is_multi_day %}
-              <div class="schedule-entry-time ">
-                {{ entry.start | date: '%d. %B %H:%M' }}–{{ entry.end | date: '%d. %B %H:%M' }}
+              <div class="schedule-entry-time">
+                {{ event.start | date: '%d. %B %H:%M' }}–{{ event.end | date: '%d. %B %H:%M' }}
               </div>
             {% else %}
-              <div class="schedule-entry-time">
-                {{ entry.start | date: '%H:%M' }}–{{ entry.end | date: '%H:%M' }}
-              </div>
+              <div class="schedule-entry-time">{{ event.start | date: '%H:%M' }}–{{ event.end | date: '%H:%M' }}</div>
             {% endif %}
+
             <div class="schedule-entry-description">
-              {{ entry.description }}
+              {{ event.title }}
+              {% if event.subtitle %}
+                <div class="schedule-entry-subtitle">{{ event.subtitle }}</div>
+              {% endif %}
             </div>
-          </div>
+          </a>
         {% endfor %}
       </div>
 
