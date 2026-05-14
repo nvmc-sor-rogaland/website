@@ -1,0 +1,71 @@
+---
+layout: base
+---
+
+{% include header.html type="page" %}
+
+<main class="{% if page.full-width %} container-fluid {% else %} container-md {% endif %}">
+  <div class="row">
+    <div class="{% if page.full-width %} col {% else %} col-xl-8 offset-xl-2 col-lg-10 offset-lg-1 {% endif %}">
+      {% if page.before-content %}
+        <div class="before-content">
+          {% for file in page.before-content %}
+            {% include {{ file }} %}
+          {% endfor %}
+        </div>
+      {% endif %}
+
+      {{ content }}
+
+      {% if page.events %}
+        <div class="events-container">
+          {% for event in page.events %}
+            {% assign start_date = event.date_start | date: "%Y-%m-%d" %}
+            {% assign end_date = event.date_end | date: "%Y-%m-%d" %}
+            {% if start_date != end_date %}
+              {% assign is_multi_day = true %}
+            {% else %}
+              {% assign is_multi_day = false %}
+            {% endif %}
+
+              <div class="event-content">
+                <!-- Left column: Date -->
+                <div class="event-date">
+                  <small class="event-date-month">
+                    {{ event.date_start | date: "%b" }}
+                  </small>
+                  <h3 class="event-date-primary">
+                    {{ event.date_start | date: "%d" }}
+                  </h3>
+                </div>
+
+                <!-- Right column: Time and Description -->
+                  {% if is_multi_day %}
+                    <div class="event-time">
+                      {{ event.date_start | date: "%d. %B %H:%M" }} - {{ event.date_end | date: "%d. %B %H:%M" }}
+                    </div>
+                  {% else %}
+                    <div class="event-time">
+                      {{ event.date_start | date: "%H.%M" }} - {{ event.date_end | date: "%H.%M" }}
+                    </div>
+                  {% endif %}
+                  <div class="event-description">
+                    {{ event.description }}
+                  </div>
+              </div>
+          {% endfor %}
+        </div>
+      {% endif %}
+
+      {% if page.after-content %}
+        <div class="after-content">
+          {% for file in page.after-content %}
+            {% include {{ file }} %}
+          {% endfor %}
+        </div>
+      {% endif %}
+
+      {% include comments.html %}
+    </div>
+  </div>
+</main>

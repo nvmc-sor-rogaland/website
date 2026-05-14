@@ -26,26 +26,49 @@ collections:
     slug: "{{year}}"
     fields:
       - { name: "year", label: "År", widget: "number", value_type: "int" }
-      - { name: "layout", label: "Layout", widget: "hidden", default: "page" }
+      - { name: "layout", label: "Layout", widget: "hidden", default: "events" }
       - { name: "title", label: "Tittel", widget: "string" }
       - { name: "subtitle", label: "Ingress", widget: "string" }
       - { name: "body", label: "Innhold", widget: "richtext", required: false }
-  - name: "signup"
-    label: "Bli medlem"
-    file: "_signup.md"
+      - name: "events"
+        label: "Arrangementer"
+        widget: "list"
+        fields:
+          - { name: "date_start", label: "Startdato", widget: "datetime", format: "YYYY-MM-DD HH:mm" }
+          - { name: "date_end", label: "Sluttdato", widget: "datetime", format: "YYYY-MM-DD HH:mm"}
+          - { name: "description", label: "Beskrivelse", widget: "string" }
+
+  - name: "pages"
+    label: "Sider"
+    files:
+      - name: "join"
+        label: "Bli medlem"
+        file: "bli-medlem.md"
+        fields:
+          - { name: "layout", label: "Layout", widget: "hidden", default: "page" }
+          - { name: "title", label: "Tittel", widget: "string" }
+          - { name: "subtitle", label: "Ingress", widget: "string" }
+          - { name: "body", label: "Innhold", widget: "richtext", required: false }
+      - name: "about"
+        label: "Om oss"
+        file: "omoss.md"
+        fields:
+          - { name: "layout", label: "Layout", widget: "hidden", default: "page" }
+          - { name: "title", label: "Tittel", widget: "string" }
+          - { name: "subtitle", label: "Ingress", widget: "string" }
+          - { name: "body", label: "Innhold", widget: "richtext", required: false }
+  - name: "posts"
+    label: "Innlegg"
+    folder: "_posts/"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
-      - { name: "layout", label: "Layout", widget: "hidden", default: "page" }
+      - { name: "layout", label: "Layout", widget: "hidden", default: "post" }
       - { name: "title", label: "Tittel", widget: "string" }
-      - { name: "subtitle", label: "Ingress", widget: "string" }
-      - { name: "body", label: "Innhold", widget: "richtext", required: false }
-    -name: "about"
-    label: "Om oss"
-    file: "omoss.md"
-    fields:
-      - { name: "layout", label: "Layout", widget: "hidden", default: "page" }
-      - { name: "title", label: "Tittel", widget: "string" }
-      - { name: "subtitle", label: "Ingress", widget: "string" }
-      - { name: "body", label: "Innhold", widget: "richtext", required: false }
+      - { name: "subtitle", label: "Subtitle", widget: "string", required: false }
+      - { name: "date", label: "Dato", widget: "datetime" }
+      - { name: "tags", label: "Tags", widget: "list", required: false }
+      - { name: "body", label: "Innhold", widget: "richtext" }
 
 
 auth:
