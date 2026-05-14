@@ -17,7 +17,6 @@ backend:
     openAuthoring: Message {{message}} - {{author-name}} <{{author-login}}> via DecapBridge
 
 media_folder: "assets/uploads"
-public_folder: "/assets/uploads"
 
 collections:
   - name: "posts"
