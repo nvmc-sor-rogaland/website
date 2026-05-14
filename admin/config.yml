@@ -55,7 +55,7 @@ collections:
     label_singular: "Arrangement"
     folder: "_events/"
     create: true
-    slug: "{{ start }}-{{ slug }}"
+    slug: "{{start}}-{{slug}}"
     fields:
       - { name: "layout", label: "Layout", widget: "hidden", default: "event" }
       - { name: "title", label: "Tittel", widget: "string" }
