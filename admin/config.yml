@@ -43,20 +43,15 @@ collections:
     label_singular: "Arrangement"
     folder: "_events/"
     create: true
-    slug: "{% field.start | date('YYYY-MM-DD') %}-{{slug}}"
+    slug: "{% field.start | date('YYYY') %}/{% field.start | date('YYYY-MM-DD') %}-{{slug}}"
     fields:
       - { name: "layout", label: "Layout", widget: "hidden", default: "event" }
       - { name: "title", label: "Tittel", widget: "string" }
       - { name: "subtitle", label: "Ingress", widget: "string", required: false }
-      - { name: "start", label: "Startdato og -tidspunkt", widget: "datetime", format: "YYYY-MM-DD HH:mm" }
-      - { name: "end", label: "Sluttdato og -tidspunkt", widget: "datetime", format: "YYYY-MM-DD HH:mm", required: false }
+      - { name: "start", label: "Startdato og -tidspunkt", widget: "datetime", format: "LLL" }
+      - { name: "end", label: "Sluttdato og -tidspunkt", widget: "datetime", format: "LLL", required: false }
       - { name: "location", label: "Sted", widget: "string" }
       - { name: "body", label: "Beskrivelse", widget: "richtext", required: false }
-    nested:
-      depth: 2
-      summary: '{{title}}'
-      subfolders: false
-    meta: { path: { widget: string, label: 'Path', index_file: '_index' } }
 
   - name: "pages"
     label: "Sider"
