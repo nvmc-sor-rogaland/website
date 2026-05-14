@@ -1125,27 +1125,27 @@ pre {
   }
 }
 
-/* --- Events Layout --- */
+/* --- Schedule Layout --- */
 
-.events-container {
+.schedule-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2rem;
-  margin: 1rem 0.5rem 0rem
+  margin: 1rem 0.5rem;
 }
 
-.event-content {
+.schedule-content {
   display: grid;
   grid-template-columns: auto 1fr;
   grid-template-rows: auto auto;
   column-gap: 1.5rem;
-  row-gap: 0rem;
+  row-gap: 0.125rem;
   grid-template-areas:
     "date time"
     "date description";
 }
 
-.event-date {
+.schedule-entry-date {
   grid-area: date;
   display: flex;
   flex-direction: column;
@@ -1153,34 +1153,33 @@ pre {
   justify-content: center;
 }
 
-.event-date-primary {
-  font-size: 2.5rem;
-  font-weight: 700;
-  line-height: 1;
-  color: var(--text-col);
-  font-family: var(--header-font);
-  margin: 0;
-}
-
-.event-date-month {
+.schedule-entry-date-month{
   display: block;
   font-size: 0.75rem;
   font-weight: 600;
   letter-spacing: 0.05em;
   color: var(--mid-col);
   font-family: var(--header-font);
-  margin: 0;
+  font-variant: small-caps;
 }
 
-.event-time {
+.schedule-entry-date-day {
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--text-col);
+  font-family: var(--header-font);
+}
+
+.schedule-entry-time {
   grid-area: time;
-  font-weight: 600;
+  font-weight: 400;
   color: var(--text-col);
   font-size: 1.05rem;
   font-family: var(--header-font);
 }
 
-.event-description {
+.schedule-entry-description {
   grid-area: description;
   font-size: 1.05rem;
   line-height: 1.6;

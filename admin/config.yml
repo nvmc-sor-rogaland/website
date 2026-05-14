@@ -19,25 +19,29 @@ backend:
 media_folder: "assets/uploads"
 
 collections:
-  - name: "events"
-    label: "Terminliste"
-    folder: "_events/"
+  - name: "schedules"
+    label: "Terminlister"
+    folder: "_schedules/"
     create: true
     slug: "{{year}}"
     fields:
-      - { name: "year", label: "År", widget: "number", value_type: "int" }
-      - { name: "layout", label: "Layout", widget: "hidden", default: "events" }
+      - {
+          name: "year",
+          label: "År",
+          widget: "number",
+          value_type: "int",
+          pattern: ["^[0-9]{4}$", "Må inneholde et årstall"],
+        }
+      - { name: "layout", label: "Layout", widget: "hidden", default: "schedules" }
       - { name: "title", label: "Tittel", widget: "string" }
       - { name: "subtitle", label: "Ingress", widget: "string" }
-      - { name: "body", label: "Innhold", widget: "richtext", required: false }
       - name: "events"
         label: "Arrangementer"
         widget: "list"
         fields:
-          - { name: "date_start", label: "Startdato", widget: "datetime", format: "YYYY-MM-DD HH:mm" }
-          - { name: "date_end", label: "Sluttdato", widget: "datetime", format: "YYYY-MM-DD HH:mm"}
+          - { name: "datetime_start", label: "Startdato", widget: "datetime", format: "YYYY-MM-DD HH:mm" }
+          - { name: "datetime_end", label: "Sluttdato", widget: "datetime", format: "YYYY-MM-DD HH:mm" }
           - { name: "description", label: "Beskrivelse", widget: "string" }
-
   - name: "pages"
     label: "Sider"
     files:
@@ -69,7 +73,6 @@ collections:
       - { name: "date", label: "Dato", widget: "datetime" }
       - { name: "tags", label: "Tags", widget: "list", required: false }
       - { name: "body", label: "Innhold", widget: "richtext" }
-
 
 auth:
   email_claim: email

@@ -18,10 +18,10 @@
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ link[0] }}</a>
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
               {%- if link[0] == "Terminliste" -%}
-                {%- assign events = site.events | sort: 'path' | reverse -%}
-                {%- for event in events -%}
-                  {%- assign year = event.path | split: '/' | last | split: '.' | first -%}
-                  <a class="dropdown-item" href="{{ event.url | relative_url }}">{{ year }}</a>
+                {%- assign schedules = site.schedules | sort: 'path' | reverse -%}
+                {%- for schedule in schedules -%}
+                  {%- assign year = schedule.path | split: '/' | last | split: '.' | first -%}
+                  <a class="dropdown-item" href="{{ schedule.url | relative_url }}">{{ year }}</a>
                 {%- endfor -%}
               {%- else -%}
                 {%- for childlink in link[1] -%}
