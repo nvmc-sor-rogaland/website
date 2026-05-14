@@ -20,7 +20,7 @@ media_folder: "assets/uploads"
 
 collections:
   - name: "schedules"
-    label: "Terminlister"
+    label: "Terminliste"
     folder: "_schedules/"
     create: true
     slug: "{{year}}"
@@ -35,8 +35,8 @@ collections:
       - { name: "layout", label: "Layout", widget: "hidden", default: "schedules" }
       - { name: "title", label: "Tittel", widget: "string" }
       - { name: "subtitle", label: "Ingress", widget: "string" }
-      - name: "events"
-        label: "Arrangementer"
+      - name: "entries"
+        label: "Arrangement"
         widget: "list"
         fields:
           - { name: "start", label: "Startdato og -tidspunkt", widget: "datetime", format: "YYYY-MM-DD HH:mm" }
@@ -94,6 +94,6 @@ auth:
   last_name_claim: last_name
   avatar_url_claim: avatar_url
 
-logo_url: https://decapbridge.com/decapcms-with-bridge.svg
+logo_url: https://raw.githubusercontent.com/nvmc-sor-rogaland/website/refs/heads/master/assets/img/logo.png
 
-site_url: https://nvmc-sor-rogaland.github.io
+site_url: https://nvmc-sor-rogaland.github.io/website
