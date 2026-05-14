@@ -2,7 +2,7 @@
 layout: event
 title: Medlemsmøte
 subtitle: Velkommen til medlemsmøte på Rogaland bilmuseum
-cover-img: rogaland-bilmuseum-cover.jpg
+cover-img: assets/uploads/rogaland-bilmuseum-cover.jpg
 start: 2026-05-14 19:00
 end: 2026-05-14 21:00
 location: Postvegen 212, 4353 Klepp Stasjon
