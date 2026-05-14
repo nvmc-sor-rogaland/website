@@ -51,7 +51,7 @@ collections:
       - { name: "start", label: "Startdato og -tidspunkt", widget: "datetime", format: "LLL" }
       - { name: "end", label: "Sluttdato og -tidspunkt", widget: "datetime", format: "LLL", required: false }
       - { name: "location", label: "Sted", widget: "string" }
-      - { name: "body", label: "Beskrivelse", widget: "richtext", required: false }
+      - { name: "body", label: "Beskrivelse", widget: "richtext" }
 
   - name: "pages"
     label: "Sider"
@@ -64,7 +64,7 @@ collections:
           - { name: "layout", label: "Layout", widget: "hidden", default: "page" }
           - { name: "title", label: "Tittel", widget: "string" }
           - { name: "subtitle", label: "Ingress", widget: "string", required: false }
-          - { name: "body", label: "Innhold", widget: "richtext", required: false }
+          - { name: "body", label: "Innhold", widget: "richtext" }
       - name: "about"
         label: "Om oss"
         file: "omoss.md"
@@ -72,7 +72,7 @@ collections:
           - { name: "layout", label: "Layout", widget: "hidden", default: "page" }
           - { name: "title", label: "Tittel", widget: "string" }
           - { name: "subtitle", label: "Ingress", widget: "string", required: false }
-          - { name: "body", label: "Innhold", widget: "richtext", required: false }
+          - { name: "body", label: "Innhold", widget: "richtext" }
 
   - name: "posts"
     label: "Innlegg"
@@ -83,7 +83,7 @@ collections:
       - { name: "layout", label: "Layout", widget: "hidden", default: "post" }
       - { name: "title", label: "Tittel", widget: "string" }
       - { name: "subtitle", label: "Subtitle", widget: "string", required: false }
-      - { name: "tags", label: "Tags", widget: "list", required: false }
+      - { name: "cover_img", label: "Omslagsbilde", widget: "image", required: false }
       - { name: "body", label: "Innhold", widget: "richtext" }
 
 auth:
