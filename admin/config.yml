@@ -54,14 +54,14 @@ collections:
     label_singular: "Arrangement"
     folder: "_events/"
     create: true
-    path: "{{ start | date: 'YYYY' }}/{{ start | date: 'YYYY-MM-DD' }}-{{ slug }}"
+    path: "{{ field.start.year}}/{{ field.start.year }}-{{ field.start.month }}-{{field.start.day }}-{{ slug }}"
     fields:
       - { name: "layout", label: "Layout", widget: "hidden", default: "event" }
       - { name: "title", label: "Tittel", widget: "string" }
       - { name: "subtitle", label: "Ingress", widget: "string", required: false }
       - { name: "cover-img", label: "Omslagsbilde", widget: "image", required: false }
-      - { name: "start", label: "Startdato og -tidspunkt", widget: "datetime", format: "LLL" }
-      - { name: "end", label: "Sluttdato og -tidspunkt", widget: "datetime", format: "LLL", required: false }
+      - { name: "start", label: "Startdato og -tidspunkt", widget: "datetime", format: "YYYY-MM-DD HH:mm" }
+      - { name: "end", label: "Sluttdato og -tidspunkt", widget: "datetime", format: "YYYY-MM-DD HH:mm", required: false }
       - { name: "location", label: "Sted", widget: "string" }
       - { name: "body", label: "Beskrivelse", widget: "richtext" }
 
@@ -98,4 +98,4 @@ logo:
 
 site_url: https://nvmc-sor-rogaland.github.io/website
 
-locale: 'nb_no'
+locale: "nb_no"
