@@ -55,7 +55,7 @@ collections:
     folder: "_events/"
     create: true
     path: "{{ field.start.year}}/{{ field.start.year }}-{{ field.start.month }}-{{field.start.day }}-{{ slug }}"
-    media_folder: "assets/uploads"
+    media_folder: "{{media_folder}}"
     fields:
       - { name: "layout", label: "Layout", widget: "hidden", default: "event" }
       - { name: "title", label: "Tittel", widget: "string" }
