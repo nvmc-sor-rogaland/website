@@ -43,7 +43,7 @@ collections:
     label_singular: "Arrangement"
     folder: "_events/"
     create: true
-    slug: "{{ field.start | date: 'YYYY' }}/{{ field.start | date: 'YYYY-MM-DD' }}-{{slug}}"
+    path: "{{ start | date: 'YYYY' }}/{{ start | date: 'YYYY-MM-DD' }}-{{ slug }}"
     fields:
       - { name: "layout", label: "Layout", widget: "hidden", default: "event" }
       - { name: "title", label: "Tittel", widget: "string" }
