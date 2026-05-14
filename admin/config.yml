@@ -17,6 +17,7 @@ backend:
     openAuthoring: Message {{message}} - {{author-name}} <{{author-login}}> via DecapBridge
 
 media_folder: "assets/uploads"
+public_folder: "/assets/uploads"
 
 collections:
   - name: "posts"
@@ -54,8 +55,9 @@ collections:
     label_singular: "Arrangement"
     folder: "_events/"
     create: true
-    path: "{{ start | date('YYYY') }}/{{ start | date('DD-MM-YYYY') }}-{{ slug }}"
-    media_folder: "{{media_folder}}"
+    path: "{{ start | date('YYYY-MM-DD') }}-{{ slug }}"
+    media_folder: "assets/uploads"
+    public_folder: "/assets/uploads"
     fields:
       - { name: "layout", label: "Layout", widget: "hidden", default: "event" }
       - { name: "title", label: "Tittel", widget: "string" }
