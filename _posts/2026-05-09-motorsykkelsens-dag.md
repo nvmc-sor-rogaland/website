@@ -3,8 +3,8 @@ layout: post
 title: Motorsykkelens dag
 subtitle: NVMC avd. Sør-Rogaland skapte stor begeistring i Hillevåg
 cover-img: /assets/uploads/motorsykkelens-dag-2026-cover.jpg
+cover_img: /assets/uploads/motorsykkelens-dag-2026-cover.jpg
 ---
-
  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec convallis enim vitae interdum blandit. Phasellus dapibus lacus in augue sollicitudin tempus. Donec dictum nisi turpis, vitae vestibulum ex auctor ac. Etiam in luctus erat. Sed ex tortor, interdum a elit eget, venenatis scelerisque odio. Integer in rhoncus felis. Mauris eget scelerisque mauris. Sed at dolor id arcu rhoncus accumsan ac sed arcu.
 
 Ut at dapibus sem. Interdum et malesuada fames ac ante ipsum primis in faucibus. Donec erat metus, elementum condimentum cursus in, posuere et nisi. Proin malesuada diam eu eros dictum interdum. Praesent feugiat dolor sed nisi egestas commodo sit amet vitae quam. Integer magna lorem, bibendum gravida aliquam vitae, hendrerit ut eros. Duis mollis, enim eu ultrices gravida, mauris lorem imperdiet augue, id interdum leo urna et ante. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nullam nec nisl faucibus, mollis dui eget, ornare mi. Nam a gravida est. Suspendisse eros tellus, dictum sed sapien id, gravida dictum velit. Quisque sit amet nunc malesuada magna tristique varius. Morbi vestibulum rutrum ipsum et tempor. Sed ultrices, magna ut ullamcorper rutrum, massa odio imperdiet sem, ut consequat nisl eros a est. In ultrices ut leo a eleifend.
