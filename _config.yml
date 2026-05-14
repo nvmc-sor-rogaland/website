@@ -88,7 +88,7 @@ social-network-links:
 
 # If you want your website to generate an RSS feed, provide a description
 # The URL for the feed will be https://<your_website>/feed.xml
-rss-description: This website is a virtual proof that I'm awesome
+rss-description: "NVMC avd. Sør-Rogaland er en lokalavdeling med formål å organisere medlemmer av NVMC i Rogaland sør for Boknafjorden samt Ryfylke og nærliggende områder."
 
 ###########################
 # --- General options --- #
@@ -262,7 +262,7 @@ date_format: "%B %-d, %Y"
 #################################################################################
 
 # Output options (more information on Jekyll's site)
-timezone: "America/Toronto"
+timezone: "Europe/Oslo"
 markdown: kramdown
 highlighter: rouge
 permalink: /:year-:month-:day-:title/
@@ -276,6 +276,9 @@ collections:
   schedules:
     output: true
     permalink: /terminliste/:path
+  events:
+    output: true
+    permalink: /arrangementer/:path
 
 # Default YAML values (more information on Jekyll's site)
 defaults:

@@ -1186,26 +1186,9 @@ pre {
   color: var(--text-col);
 }
 
-.event-related-posts {
-  margin-top: 0.5rem;
-  padding-top: 0.75rem;
-  border-top: 1px solid rgba(0, 0, 0, 0.1);
-}
+/* --- Event Layout --- */
 
-.event-read-more {
-  color: var(--link-col);
-  text-decoration: none;
-  font-weight: 500;
-  font-size: 0.95rem;
-}
-
-.event-posts-list {
-  margin-top: 0.5rem;
-  padding-left: 1rem;
-  font-size: 0.9rem;
-}
-
-.event-posts-list a {
-  color: var(--link-col);
-  text-decoration: none;
+.event-info-container {
+  display: flex;
+  flex-direction: row;
 }

@@ -16,8 +16,8 @@ layout: base
 
       <div class="schedule-container">
         {% for entry in page.entires %}
-          {% assign start_date = entry.datetime_start | date: '%Y-%m-%d' %}
-          {% assign end_date = entry.datetime_end | date: '%Y-%m-%d' %}
+          {% assign start_date = entry.start | date: '%Y-%m-%d' %}
+          {% assign end_date = entry.end | date: '%Y-%m-%d' %}
 
           {% if start_date != end_date %}
             {% assign is_multi_day = true %}
@@ -29,21 +29,21 @@ layout: base
             <!-- Left column: Date -->
             <div class="schedule-entry-date">
               <div class="schedule-entry-date-month">
-                {{ entry.datetime_start | date: '%b' }}
+                {{ entry.start | date: '%b' }}
               </div>
               <div class="schedule-entry-date-day">
-                {{ entry.datetime_start | date: '%d' }}
+                {{ entry.start | date: '%d' }}
               </div>
             </div>
 
             <!-- Right column: Time and Description -->
             {% if is_multi_day %}
               <div class="schedule-entry-time ">
-                {{ entry.datetime_start | date: '%d. %B %H:%M' }}–{{ entry.datetime_end | date: '%d. %B %H:%M' }}
+                {{ entry.start | date: '%d. %B %H:%M' }}–{{ entry.end | date: '%d. %B %H:%M' }}
               </div>
             {% else %}
               <div class="schedule-entry-time">
-                {{ entry.datetime_start | date: '%H:%M' }}–{{ entry.datetime_end | date: '%H:%M' }}
+                {{ entry.start | date: '%H:%M' }}–{{ entry.end | date: '%H:%M' }}
               </div>
             {% endif %}
             <div class="schedule-entry-description">
