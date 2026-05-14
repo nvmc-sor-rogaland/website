@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Motorsykkelens dag 2026
+title: Motorsykkelens dag
 subtitle: NVMC avd. Sør-Rogaland skapte stor begeistring i Hillevåg
 cover-img: /assets/uploads/motorsykkelens-dag-2026-cover.jpg
 ---

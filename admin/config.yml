@@ -19,6 +19,7 @@ backend:
 media_folder: "assets/uploads"
 
 collections:
+
   - name: "schedules"
     label: "Terminlister"
     label_singular: "Terminliste"
@@ -36,39 +37,38 @@ collections:
       - { name: "layout", label: "Layout", widget: "hidden", default: "schedules" }
       - { name: "title", label: "Tittel", widget: "string" }
       - { name: "subtitle", label: "Ingress", widget: "string" }
-      - name: "entries"
-        label: "Arrangement"
-        widget: "list"
-        fields:
-          - { name: "start", label: "Startdato og -tidspunkt", widget: "datetime", format: "YYYY-MM-DD HH:mm" }
-          - { name: "end", label: "Sluttdato og -tidspunkt", widget: "datetime", format: "YYYY-MM-DD HH:mm", required: false }
-          - { name: "description", label: "Beskrivelse", widget: "string" }
-          - { name: "event", label: "Arrangement", widget: "relation", collection: "events", search_fields: ["title"], value_field: "{{slug}}", required: false }
+
   - name: "events"
     label: "Arrangementer"
     label_singular: "Arrangement"
     folder: "_events/"
     create: true
-    slug: "{{slug}}"
+    slug: "{% field.start | date('YYYY-MM-DD') %}-{{slug}}"
     fields:
       - { name: "layout", label: "Layout", widget: "hidden", default: "event" }
       - { name: "title", label: "Tittel", widget: "string" }
-      - { name: "subtitle", label: "Ingress", widget: "string" }
+      - { name: "subtitle", label: "Ingress", widget: "string", required: false }
       - { name: "start", label: "Startdato og -tidspunkt", widget: "datetime", format: "YYYY-MM-DD HH:mm" }
       - { name: "end", label: "Sluttdato og -tidspunkt", widget: "datetime", format: "YYYY-MM-DD HH:mm", required: false }
       - { name: "location", label: "Sted", widget: "string" }
-      - { name: "body", label: "Beskrivelse", widget: "richtext", required: true }
+      - { name: "body", label: "Beskrivelse", widget: "richtext", required: false }
+    nested:
+      depth: 2
+      summary: '{{title}}'
+      subfolders: false
+    meta: { path: { widget: string, label: 'Path', index_file: '_index' } }
+
   - name: "pages"
     label: "Sider"
     label_singular: "Side"
     files:
       - name: "join"
         label: "Bli medlem"
-        file: "bli-medlem.md"
+        file: "blimedlem.md"
         fields:
           - { name: "layout", label: "Layout", widget: "hidden", default: "page" }
           - { name: "title", label: "Tittel", widget: "string" }
-          - { name: "subtitle", label: "Ingress", widget: "string" }
+          - { name: "subtitle", label: "Ingress", widget: "string", required: false }
           - { name: "body", label: "Innhold", widget: "richtext", required: false }
       - name: "about"
         label: "Om oss"
@@ -76,8 +76,9 @@ collections:
         fields:
           - { name: "layout", label: "Layout", widget: "hidden", default: "page" }
           - { name: "title", label: "Tittel", widget: "string" }
-          - { name: "subtitle", label: "Ingress", widget: "string" }
+          - { name: "subtitle", label: "Ingress", widget: "string", required: false }
           - { name: "body", label: "Innhold", widget: "richtext", required: false }
+
   - name: "posts"
     label: "Innlegg"
     folder: "_posts/"
@@ -87,7 +88,6 @@ collections:
       - { name: "layout", label: "Layout", widget: "hidden", default: "post" }
       - { name: "title", label: "Tittel", widget: "string" }
       - { name: "subtitle", label: "Subtitle", widget: "string", required: false }
-      - { name: "date", label: "Dato", widget: "datetime" }
       - { name: "tags", label: "Tags", widget: "list", required: false }
       - { name: "body", label: "Innhold", widget: "richtext" }
 
@@ -103,4 +103,4 @@ logo:
 
 site_url: https://nvmc-sor-rogaland.github.io/website
 
-locale: 'no'
+locale: 'nb_no'

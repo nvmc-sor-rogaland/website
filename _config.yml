@@ -16,7 +16,7 @@ title: NVMC avd. Sør-Rogaland
 # author:
 
 # The language used on the website
-locale: no
+locale: nb_no
 
 ###############################################
 # --- List of links in the navigation bar --- #
@@ -279,6 +279,9 @@ collections:
   events:
     output: true
     permalink: /arrangementer/:path
+  pages:
+    output: true
+    permalink: /:path
 
 # Default YAML values (more information on Jekyll's site)
 defaults:
