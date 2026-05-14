@@ -58,7 +58,7 @@ collections:
     fields:
       - { name: "layout", label: "Layout", widget: "hidden", default: "event" }
       - { name: "title", label: "Tittel", widget: "string" }
-      - { name: "subtitle", label: "Ingress", widget: "string", required: false }
+      - { name: "subtitle", label: "Ingress", widget: "string" }
       - { name: "cover-img", label: "Omslagsbilde", widget: "image", required: false }
       - { name: "start", label: "Startdato og -tidspunkt", widget: "datetime", format: "YYYY-MM-DD HH:mm" }
       - { name: "end", label: "Sluttdato og -tidspunkt", widget: "datetime", format: "YYYY-MM-DD HH:mm", required: false }

@@ -55,10 +55,7 @@ layout: base
             {% endif %}
 
             <div class="schedule-entry-description">
-              {{ event.title }}
-              {% if event.subtitle %}
-                <div class="schedule-entry-subtitle">{{ event.subtitle }}</div>
-              {% endif %}
+              <div class="schedule-entry-subtitle">{{ event.subtitle }}</div>
             </div>
           </a>
         {% endfor %}
